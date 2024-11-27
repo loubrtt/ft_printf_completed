@@ -1,0 +1,48 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putunsigned.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/11/16 00:09:19 by lobriott          #+#    #+#             */
+/*   Updated: 2024/11/27 12:56:08 by loubriottet      ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+static void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}
+
+static int	len_num(unsigned int i)
+{
+	int	len;
+
+	len = 0;
+	if (i == 0)
+		return (1);
+	while (i > 0)
+	{
+		i /= 10;
+		len++;
+	}
+	return (len);
+}
+
+int	ft_putunsigned(unsigned int n)
+{
+	int	count;
+
+	count = len_num(n);
+	if (n >= 10)
+	{
+		ft_putunsigned(n / 10);
+		ft_putchar((n % 10) + '0');
+	}
+	else
+		ft_putchar(n + '0');
+	return (count);
+}
