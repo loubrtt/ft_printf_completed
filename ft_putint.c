@@ -6,7 +6,7 @@
 /*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 23:18:29 by lobriott          #+#    #+#             */
-/*   Updated: 2024/11/27 12:54:28 by loubriottet      ###   ########.fr       */
+/*   Updated: 2024/11/18 14:04:16 by loubriottet      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,3 +65,11 @@ int	ft_putint(int i)
 	}
 	return (lennum(nb));
 }
+
+// #include <stdio.h>
+// int main (void)
+// {
+// 	int i = 12;
+
+// 	printf("%d \n %i", i , i);
+// }

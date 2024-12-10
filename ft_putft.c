@@ -6,7 +6,7 @@
 /*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 23:14:30 by lobriott          #+#    #+#             */
-/*   Updated: 2024/11/27 12:55:26 by loubriottet      ###   ########.fr       */
+/*   Updated: 2024/11/18 14:02:15 by loubriottet      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,13 @@ int	ft_putft(char c, va_list arg)
 	else if (c == 'u')
 		count = ft_putunsigned(va_arg(arg, unsigned int));
 	else if (c == 'x')
-		count = ft_puthexa(va_arg(arg, unsigned int), "0123456789abcdef");
+		count = ft_puthexa(va_arg(arg, unsigned int), 1);
 	else if (c == 'X')
-		count = ft_puthexa(va_arg(arg, unsigned int), "0123456789ABCDEF");
+		count = ft_puthexa(va_arg(arg, unsigned int), 0);
 	else if (c == '%')
-		count = write(1, "%", 1);
+	{
+		write(1, "%", 1);
+		count = 1;
+	}
 	return (count);
 }

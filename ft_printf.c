@@ -6,7 +6,7 @@
 /*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 23:12:52 by lobriott          #+#    #+#             */
-/*   Updated: 2024/11/27 12:50:50 by loubriottet      ###   ########.fr       */
+/*   Updated: 2024/11/18 14:01:03 by loubriottet      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_printf(const char *format, ...)
 			write(1, &format[i], 1);
 		if (format[i] == '%')
 		{
-			if (ft_is_conversion(format[i++]) == 1)
+			if (ft_iscspdiux(format[i++]) == 1)
 				count += ft_putft(format[i], argument) - 2;
 			else
 				count--;
@@ -42,3 +42,16 @@ int	ft_printf(const char *format, ...)
 	va_end(argument);
 	return (i + count);
 }
+
+// #include <stdio.h>
+
+// #include "ft_printf.h"
+
+// int main(void)
+// {
+// 	int i = ft_printf(" %p %p ", 0, 0);
+//     int j = printf(" %p %p ", 0, 0);
+
+// 	printf(" \n ma ft = %d \n vraie ft = %d", i, j);
+//     return (0);
+// }

@@ -6,13 +6,13 @@
 /*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 23:17:53 by lobriott          #+#    #+#             */
-/*   Updated: 2024/11/27 12:53:51 by loubriottet      ###   ########.fr       */
+/*   Updated: 2024/11/18 14:00:13 by loubriottet      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-static int	len_num(unsigned int num)
+static int	lennum(unsigned int num)
 {
 	int	count;
 
@@ -27,17 +27,21 @@ static int	len_num(unsigned int num)
 	return (count);
 }
 
-int	ft_puthexa(unsigned int num, char *base)
+int	ft_puthexa(unsigned int num, int flag)
 {
+	char	*hexa;
 	int		len;
 
-	len = len_num(num);
+	len = lennum(num);
+	hexa = "0123456789ABCDEF";
+	if (flag == 1)
+		hexa = "0123456789abcdef";
 	if (num < 16)
-		write(1, &base[num], 1);
+		write(1, &hexa[num], 1);
 	if (num >= 16)
 	{
-		ft_puthexa(num / 16, base);
-		ft_puthexa(num % 16, base);
+		ft_puthexa(num / 16, flag);
+		ft_puthexa(num % 16, flag);
 	}
 	return (len);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putvoidhexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lobriott <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 18:26:48 by lobriott          #+#    #+#             */
-/*   Updated: 2024/11/27 12:54:45 by loubriottet      ###   ########.fr       */
+/*   Updated: 2024/11/18 18:26:50 by lobriott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,3 +54,11 @@ int	ft_putvoidhexa(void *adress, char *base)
 	puthexa(str);
 	return (i - 1);
 }
+// #include <stdio.h>
+// int main (void)
+// {
+//     void *ptr = "hello";
+//     size_t a = (size_t)ptr;
+//     nbhexa(a, "0123456789abcdef");
+//     printf(" %zu" ,a);
+// }

@@ -6,7 +6,7 @@
 /*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/16 00:09:19 by lobriott          #+#    #+#             */
-/*   Updated: 2024/11/27 12:56:08 by loubriottet      ###   ########.fr       */
+/*   Updated: 2024/11/18 14:04:29 by loubriottet      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	ft_putchar(char c)
 	write(1, &c, 1);
 }
 
-static int	len_num(unsigned int i)
+static int	lennum(unsigned int i)
 {
 	int	len;
 
@@ -36,7 +36,7 @@ int	ft_putunsigned(unsigned int n)
 {
 	int	count;
 
-	count = len_num(n);
+	count = lennum(n);
 	if (n >= 10)
 	{
 		ft_putunsigned(n / 10);
