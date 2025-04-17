@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: loubriottet <loubriottet@student.42.fr>    +#+  +:+       +#+        */
+/*   By: lobriott <lobriott@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/11 23:12:52 by lobriott          #+#    #+#             */
-/*   Updated: 2024/11/18 14:01:03 by loubriottet      ###   ########.fr       */
+/*   Updated: 2025/04/17 13:26:45 by lobriott         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	ft_printf(const char *format, ...)
 			write(1, &format[i], 1);
 		if (format[i] == '%')
 		{
-			if (ft_iscspdiux(format[i++]) == 1)
+			if (ft_is_valid_specifier(format[i++]) == 1)
 				count += ft_putft(format[i], argument) - 2;
 			else
 				count--;
